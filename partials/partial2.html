@@ -1,0 +1,12 @@
+<p>This is the partial for view reader.</p>
+<p>
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>
+<!--<pre>{{ pages | json}}<pre>-->
+<div class="flipbook-viewport">
+	<div class="container">
+		<div class="flipbook">
+			<div ng-repeat="page in svc.pages" style="background-image:url({{page}})"></div>
+		</div>
+	</div>
+</div>

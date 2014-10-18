@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width = 1050, user-scalable = no" />
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="css/jquery.ui.css"/>
+  <link rel="stylesheet" href="css/docs.css"/>
+  
+  
+</head>
+<body>
+  <ul class="menu">
+    <!--<li><a href="#/view1">view1</a></li>-->
+    <li><a href="#/view2">view2</a></li>
+  </ul>
+
+  <div ng-view></div>
+
+  <div>Angular seed app: v<span app-version></span></div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+
+  <script type="text/javascript" src="extras/jquery.min.1.7.js"></script>
+  <script type="text/javascript" src="extras/jquery-ui-1.8.20.custom.min.js"></script>
+  <script type="text/javascript" src="extras/jquery.mousewheel.min.js"></script>
+  <script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
+  <script type="text/javascript" src="lib/hash.js"></script>
+
+  <script type="text/javascript" src="js/docs.js"></script>
+<!--
+  <script type="text/javascript" src="lib/turn.html4.js"></script>
+  <script type="text/javascript" src="lib/turn.js"></script>
+  <script src="js/turnbootstrap.js"></script>
+-->
+
+
+
+<script type="text/javascript">
+
+function loadApp() {
+
+  // Create the flipbook
+
+  $('.flipbook').turn({
+      // Width
+
+      width:922,
+      
+      // Height
+
+      height:600,
+
+      // Elevation
+
+      elevation: 50,
+      
+      // Enable gradients
+
+      gradients: true,
+      
+      // Auto center this flipbook
+
+      autoCenter: true
+
+  });
+}
+
+// Load the HTML4 version if there's not CSS transform
+
+yepnope({
+  test : Modernizr.csstransforms,
+  yep: ['lib/turn.js'],
+  nope: ['lib/turn.html4.min.js'],
+  both: ['css/basic.css'],
+  complete: loadApp
+});
+
+</script>
+</body>
+</html>
